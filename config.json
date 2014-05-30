@@ -8,7 +8,5 @@
 	"emails_to_notify_on_error": [
 		"ADD EMAIL ADDRESSES HERE"
 	],
-	"email_service": "Gmail",
-	"username":"PUT USER HERE @gmail.com",
-	"password":"PUT PASSWORD HERE"
+	"email_service": "Gmail"
 }

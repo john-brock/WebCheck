@@ -17,9 +17,9 @@ var endpointTitle = config['endpoint_title'];
 var checkSsl = config['check_ssl'];
 var bodyText = config['body_text_to_check'];
 var emailsToNotify = config['emails_to_notify_on_error'];
-var emailService = config['email_service'];
-var username = config['username'];
-var password = config['password'];
+var emailService = process.env.EMAIL_SERVICE || config['email_service'];
+var username = process.env.EMAIL_USERNAME;
+var password = process.env.EMAIL_PASSWORD;
 
 var monitorOn = false;
 var timerId;
