@@ -38,6 +38,8 @@ function monitor() {
 			if(null != err && err.length > 0) {
 				logfmt.log({'endpoint_error' : err});
 				notifyRecipientsOfError(err, getDateNow());
+			} else {
+				logfmt.log({'endpoint_success' : 'Endpoint response verified'});
 			}
 		});
 	}, intervalInSeconds*1000);
