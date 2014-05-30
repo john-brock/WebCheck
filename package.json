@@ -1,0 +1,27 @@
+{
+  "name": "WebCheck",
+  "version": "0.0.0",
+  "description": "Check an http endpoint to ensure it is responding to requests",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/john-brock/WebCheck.git"
+  },
+  "keywords": [
+    "WebCheck",
+    "http"
+  ],
+  "author": "@_johnbrock",
+  "bugs": {
+    "url": "https://github.com/john-brock/WebCheck/issues"
+  },
+  "homepage": "https://github.com/john-brock/WebCheck",
+  "dependencies": {
+    "package.json": "0.0.0",
+    "express": "~4.3.2",
+    "logfmt": "~1.1.2",
+    "nodemailer": "~0.6.5",
+    "dateformat": "~1.0.8-1.2.3",
+    "request": "~2.36.0"
+  }
+}

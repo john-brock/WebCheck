@@ -1,0 +1,14 @@
+{
+	"interval_in_seconds": 60,
+	"timeout_in_seconds": 3,
+	"endpoint": "PUT URL TO MONITOR HERE",
+	"endpoint_title": "PUT TITLE OF ENDPOINT HERE",
+	"check_ssl": true,
+	"body_text_to_check": "PUT TEXT TO VERIFY IN RESPONSE HERE",
+	"emails_to_notify_on_error": [
+		"ADD EMAIL ADDRESSES HERE"
+	],
+	"email_service": "Gmail",
+	"username":"PUT USER HERE @gmail.com",
+	"password":"PUT PASSWORD HERE"
+}
