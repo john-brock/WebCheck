@@ -91,7 +91,7 @@ function sendEmail(subject, bodyText) {
 	})
 }
 
-function toggleMonitoringService(turnOn, res) {
+function toggleMonitoringService(turnOn, sendEmail, callback) {
 	var msgToSend;
 	var baseMsg = 'Monitoring service ';
 	if (monitorOn == turnOn) {
@@ -104,9 +104,9 @@ function toggleMonitoringService(turnOn, res) {
 		}
 		monitorOn = turnOn;
 		msgToSend = baseMsg + util.format('turned %s!', turnOn ? 'ON' : 'OFF');
-		notifyOfMonitoringStatusChange(turnOn, getDateNow());
+		if (sendEmail) { notifyOfMonitoringStatusChange(turnOn, getDateNow()); }
 	}
-	res.send(msgToSend);
+	callback(msgToSend);
 }
 
 function getDateNow() {
@@ -121,14 +121,19 @@ app.get('/', function(req, res) {
 });
 
 app.get('/start', function(req, res) {
-	toggleMonitoringService(true, res);
+	toggleMonitoringService(true, true, function(msg) {
+		res.send(msg);
+	});
 });
 
 app.get('/stop', function(req, res) {
-	toggleMonitoringService(false, res);
+	toggleMonitoringService(false, true, function(msg) {
+		res.send(msg);
+	});
 });
 
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
 	console.log('Monitoring service server started on port: ' + port);
+	toggleMonitoringService(true, false, function(msg) {});
 });
