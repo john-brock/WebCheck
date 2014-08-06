@@ -132,7 +132,7 @@ app.get('/stop', function(req, res) {
 	});
 });
 
-var port = Number(process.env.PORT || 5000);
+var port = Number(process.env.PORT || 5050);
 app.listen(port, function() {
 	console.log('Monitoring service server started on port: ' + port);
 	toggleMonitoringService(true, false, function(msg) {});
